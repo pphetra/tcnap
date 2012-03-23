@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>TCNAP</title>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?2.6.0"></script>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.geom.js?2.6.0"></script>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.layout.js?2.6.0"></script>
+    <script type="text/javascript" src="/static/tcnap.js"></script>
+    <style type="text/css" ></style>
+    <link href="/static/tcnap.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div>
+<input id="location_input" type='text'></input><button id="load_btn">Load</button>
+</div>
+<div id="chart"></div>
+    <script>
+var w = 900;
+var h = 800;
+var fill = d3.scale.category20();
+
+var vis = d3.select("#chart").append('svg:svg')
+    .attr('width', w)
+    .attr('height', h);
+
+
+d3.select('button#load_btn').on('click', function() {
+    update_visualize(); 
+});
+    </script>
+</body>
+</html>
