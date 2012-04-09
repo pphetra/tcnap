@@ -1,0 +1,116 @@
+$def with (locs)
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>TCNAP Visualization</title>
+	<link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+	<link href='/static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+	<link href='/static/css/animate-custom.css' rel='stylesheet' type='text/css'>
+	<link href='/static/css/style.css' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="/static/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="/static/js/customSelect.jquery.js"></script>
+	<script type="text/javascript" src="/static/js/d3/d3.v2.js"></script>
+	<script type="text/javascript" src="/static/js/tcnap.js"></script>
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body class="">
+<header class="global-padding fadeIn s1 shadow">
+	<h1 class="logo">Visualization</h1>
+</header>
+<div class="container">
+	
+	
+	<section id="start">
+	
+	</section>
+	
+	<section id="select" class="">
+		<form class="fadeIn s1">
+			<div class="row box">
+			<div class="control-group span3 select-province">
+		      <label>จังหวัด</label>
+		      <select id="select01" class="custom customStyleSelectBox">
+		        <option value="">- Select -</option>
+		        $for loc in locs:
+		        	<option value="$loc['id']">$loc['province']</option>
+		      </select>
+			</div>
+			<div class="control-group span3 select-amphor">
+			  <label>อำเภอ</label>
+			  <select id="select01" class="custom customStyleSelectBox">
+			    <option value="">- Select -</option>
+			    $for loc in locs:
+			    	<option value="$loc['id']">$loc['amphor']</option>
+			  </select>
+			</div>
+			<div class="control-group span3 select-tambol">
+			  <label>ตำบล</label>
+			  <select id="select01" class="custom customStyleSelectBox">
+			    <option value="">- Select -</option>
+			    $for loc in locs:
+			    	<option value="$loc['id']">$loc['tambol']</option>
+			  </select>
+			</div>
+			<div class="span3">
+				<button id="search" type="submit" class="btn btn-large btn-primary">Search</button>
+			</div>
+		    
+		    </div>
+		  </form>
+	</section>
+	
+	<section id="result" >
+		
+		<div class="row box topic">
+			<div class="span12 location">
+				<p>ตำบล <span class="txt-tambol">-</span></p>
+				<p>อำเภอ <span class="txt-amphor">-</span></p>
+				<p>จังหวัด <span class="txt-province">-</span></p>
+				<p>จำนวนประชากร <span class="txt-sum">-</span> คน</p>
+			</div>
+		</div>
+		
+		<div class="row box content">
+			<div class="span3">
+				
+				<ul id="legend" class="unstyled list-color">
+				</ul>
+
+			</div>
+			
+			<div class="span9">
+				<div id="chart" class="viz">
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="row box table-data">
+		
+		<table id="person-list" class="table table-bordered table-striped">
+		  <thead>
+		    <tr>
+		      <th class="number">ลำดับ</th>
+		      <th>ชื่อ-นามสกุล</th>
+		      <th>ตำแหน่ง</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  </tbody>
+		</table>
+		
+		</div>
+		
+	</section>
+</div>
+
+<!--<div class="footer">
+	<footer class="container global-padding fadeIn s1">
+		<p>Demo by <strong>Opendream Co., Ltd.</strong> | <span>Technology creates Social Innovation</span></p>
+	</footer>
+</div>-->
+</html>

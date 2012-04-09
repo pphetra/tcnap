@@ -6,6 +6,7 @@ import psycopg2
 
 urls = (
   '/', 'index',
+  '/demo', 'demo',
   '/data/(.*)', 'data'
 )
 
@@ -13,10 +14,10 @@ render = web.template.render('templates/')
 
 class index:
     def GET(self):
-        conn = psycopg2.connect('dbname=tcnp port=5432 host=localhost password=tcnap')
+        conn = psycopg2.connect('dbname=tcnap port=5432 host=localhost user=tcnap password=tcnap')
         cursor = conn.cursor()
 
-        cursor.execute("select id, tambol from location")
+        cursor.execute("select id,tambol,amphor,province from location")
         locs = []
         for row in cursor.fetchall():
             locs.append({
@@ -25,9 +26,25 @@ class index:
             })
         return render.index(locs)
 
+class demo:
+    def GET(self):
+        conn = psycopg2.connect('dbname=tcnap port=5432 host=localhost user=tcnap password=tcnap')
+        cursor = conn.cursor()
+
+        cursor.execute("select id,tambol,amphor,province from location")
+        locs = []
+        for row in cursor.fetchall():
+            locs.append({
+                'id': row[0],
+                'tambol': row[1],
+                'amphor': row[2],
+                'province': row[3]
+            })
+        return render.demo(locs)
+
 class data:
     def GET(self, location_id):
-        conn = psycopg2.connect('dbname=tcnp port=5432 host=localhost password=tcnap')
+        conn = psycopg2.connect('dbname=tcnap port=5432 host=localhost user=tcnap password=tcnap')
         cursor = conn.cursor()
         nodes = []
         id_map_index = {}
@@ -66,6 +83,16 @@ class data:
                     for j in range(1, cnt):
                         links.append('{"source": %d, "target": %d, "type": "relative"}' % (id_map_index[v[i]], id_map_index[v[j]]))
 
+        sumPerson = 0
+        cursor.execute("SELECT COUNT(id) FROM person WHERE location_id = %s", location_id)
+        for row in cursor.fetchall():
+            sumPerson = row[0]
+
+        person = []
+        cursor.execute("SELECT id, name, sur_name, description FROM person WHERE location_id = %s", location_id)
+        for row in cursor.fetchall():
+            person.append('{"id": %d, "name": "%s", "description": "%s"}' % (row[0], row[1] + ' ' + row[2], row[3]))
+
         cursor.close()
         conn.close()
 
@@ -73,7 +100,9 @@ class data:
         buff += ','.join(nodes)
         buff += '], "links": ['
         buff += ','.join(links)
-        buff += "]}"
+        buff += '], "person": ['
+        buff += ','.join(person)
+        buff += '], "sum": ' + str(sumPerson) + "}"
         return buff
 
 

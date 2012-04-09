@@ -1,0 +1,217 @@
+
+
+/* Contauner
+----------------------------------------------------------------------------------*/
+	.global-padding{
+	padding: 20px 0; }
+
+/* Skin 
+----------------------------------------------------------------------------------*/
+.rounded5{
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+.shadow {
+  -moz-box-shadow:    1px 1px 5px 1px #adadad;
+  -webkit-box-shadow: 1px 1px 5px 1px #adadad;
+  box-shadow:         1px 1px 5px 1px #adadad;
+}
+
+.box{
+	background: #fff;
+	padding: 20px 0;
+	-moz-box-shadow: 1px 2px 3px 0px #DADADA;
+	-webkit-box-shadow: 1px 2px 3px 0px #DADADA;
+	box-shadow: 1px 2px 3px 0px #DADADA;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/* Custom Select Box 
+----------------------------------------------------------------------------------*/
+.custom{ margin-left: 12px; }
+.customStyleSelectBox {
+	/* Styles For Your Select Box */
+	border: 1px solid #d5d5d5;
+	background: #f4f4f4;
+	padding: 10px 20px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+.customStyleSelectBox:hover{ cursor: pointer; }
+
+.customStyleSelectBox.changed {
+/* You can use this if you want a different style after user has made a selection */
+}
+
+/* on the next line we add a down arrow on the right to indicate that it is a select box */
+.customStyleSelectBoxInner {
+	overflow: hidden;
+	height: 21px;
+	padding-right: 5px;
+	font-size: 18px;
+	background:url("../img/canvas-list-nav-item-arrow.gif") no-repeat center right;
+}
+
+/* Basic Style
+----------------------------------------------------------------------------------*/
+@font-face {
+    font-family: 'KunlasatriRegular';
+    src: url('kunlasatri-webfont.eot');
+    src: url('kunlasatri-webfont.eot?#iefix') format('embedded-opentype'),
+         url('kunlasatri-webfont.woff') format('woff'),
+         url('kunlasatri-webfont.ttf') format('truetype'),
+         url('kunlasatri-webfont.svg#KunlasatriRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body{
+	color: #5F7787;
+	background: #F1F1F1;
+}
+h1{
+	font-family: 'Playball', sans-serif;
+}
+header{
+	margin: 0 0 50px;
+	background: #2b384a;
+	color: #fff;
+}
+.logo{
+	font-size: 46px;
+	text-align: center;
+}
+.number{
+	 width: 40px;
+}
+
+.btn-large{
+	padding: 11px 20px;
+	margin-top: 33px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.list-color li{
+	margin: 0 0 10px;
+	display: block;
+	padding: 10px;
+	color: #fff;
+	font-weight: normal;
+	font-size: 21px;
+	font-family: 'KunlasatriRegular';
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.list-1{ background: #f3a19a; border: 1px solid #e29088;
+}
+.list-2{ background: #52972e; border: 1px solid #448522;
+}
+.list-3{ background: #b0c8e6; border: 1px solid #90abce;
+}
+.list-4{ background: #8b72bb; border: 1px solid #7158a3;
+}
+.list-5{ background: #c74538; border: 1px solid #b03225;
+}
+.list-6{ background: #a8d78b; border: 1px solid #85b865; }
+.list-7{ background: #f28834; border: 1px solid #d8701e;
+}
+.list-8{ background: #327ab2; border: 1px solid #7158a3;}
+
+/*.vignette:before {
+ -moz-box-shadow: inset 0 0 10em #cdcdcd;  
+ -webkit-box-shadow: inset 0 0 10em #cdcdcd;   
+ box-shadow: inset 0 0 10em #cdcdcd;
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: 2;
+ content: "";
+}*/
+
+
+.control-group label{
+	color: #334254;
+	font-weight: normal;
+	font-size: 28px;
+	padding: 0 0 10px;
+	font-family: 'KunlasatriRegular';
+}
+
+.topic{
+	background: #1B9DD4;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+}
+
+.location p{
+	float: left;
+	padding: 10px 15px 10px 10px;
+	margin: 0 5px 0 0;
+	font-size: 18px;
+	color: #fff;
+	font-size: 36px;
+	font-family: 'KunlasatriRegular';
+	border-right: 1px solid #1c8dbe;
+}
+
+.content{
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+}
+
+.viz{
+	/*text-align: center;*/
+}
+
+.table-data{
+	padding: 20px;
+	margin: 30px 0 0 -20px;
+}
+/* Animation
+----------------------------------------------------------------------------------*/
+
+
+.s1 {
+	-moz-animation-duration: 3s;
+	-moz-animation-delay: 0;
+	-moz-animation-iteration-count: 1;
+	-webkit-animation-duration: 3s;
+	-webkit-animation-delay: 0;
+	-webkit-animation-iteration-count: 1;
+	animation-duration: 3s;
+	animation-delay: 0;
+	animation-iteration-count: 1;
+}
+
+
+circle.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+line.link_belongs {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+
+line.link_relative {
+  stroke: #ea5;
+  stroke-opacity: .6;
+}
+
+text.nodetext {
+  font: 10px sans-serif;
+}
