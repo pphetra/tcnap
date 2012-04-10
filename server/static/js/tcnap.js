@@ -147,7 +147,12 @@ var initLocationSelectList = function () {
 var initSearchButton = function () {
     J('button#search').click(function(e) {
         e.preventDefault();
-        update_visualize();
+        if (J('.select-tambol option:selected').val().toString() !== "") {
+            update_visualize();
+        }
+        else {
+            alert("กรุณาเลือกตำบล");
+        }
     });
 };
 
